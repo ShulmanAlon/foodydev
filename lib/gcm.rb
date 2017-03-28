@@ -140,7 +140,7 @@ private
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Post.new(uri.request_uri)
-    request["authorization"] = AUTH
+    request["authorization"] = "AIzaSyAa1_-biaeeGsp7oINy_2ngh08WB4VOGqI"
     request["content-type"] = "application/json"
     request.body = body.to_json
     response = http.request(request)

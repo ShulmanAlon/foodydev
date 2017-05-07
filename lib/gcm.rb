@@ -26,12 +26,12 @@ class Gcm
   end
 
   def create
-    if @publication.audience == 0
+#     if @publication.audience == 0
       devices = ActiveDevice.where(is_ios: false).where.not(remote_notification_token: "no").to_a.reverse
       devices.map!{|d| d.remote_notification_token} unless devices.empty?
-    else
-      devices = getTokens
-    end
+#     else
+#       devices = getTokens
+#     end
     body = {:registration_ids => devices, :data => {:message => {
         :type => 'new_publication',
         :id => @publication.id,

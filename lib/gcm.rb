@@ -83,7 +83,7 @@ class Gcm
 
   def new_member(id)
     tokens= getMembers(id)
-    title = id ? 'public' : Group.find(id).name
+    title = Group.find(id).name
     body = { :registration_ids => tokens, :data => {:message => {
       :type => "group_members",
       :id => id,

@@ -48,7 +48,7 @@ class Gcm
     body = {:registration_ids => tokens, :data => {:message => {
         :type => 'deleted_publication',
         id:@publication.id,
-        version:@publication.version -1,
+        version:@publication.version,
         title:@publication.title,
         latitude:@publication.latitude,
         longitude: @publication.longitude
